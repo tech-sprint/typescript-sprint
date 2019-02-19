@@ -1,0 +1,11 @@
+{
+  "name": "typescript-sprint",
+  "version": "0.0.1",
+  "description": "typescript sprint",
+  "main": "index.js",
+  "author": "weineel",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.13.0"
+  }
+}
