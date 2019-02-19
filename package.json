@@ -1,10 +1,14 @@
 {
-  "name": "typescript-sprint",
-  "version": "0.0.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
   "description": "typescript sprint",
-  "main": "index.js",
   "author": "weineel",
   "license": "MIT",
+  "scripts": {
+    "build": "lerna exec yarn build"
+  },
   "devDependencies": {
     "lerna": "^3.13.0"
   }
