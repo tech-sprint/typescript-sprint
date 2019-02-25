@@ -1,5 +1,16 @@
 #!/usr/bin/env node
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -12,11 +23,17 @@ commander_1.default
     .version(require('../package.json').version)
     .usage('<command> [options]');
 commander_1.default
-    .command('helloword <username>')
+    .command('helloworld <username>')
     .description('向指定的用户问好')
-    .option('-p, --pname', '显示 helloword 程序的全称')
+    .option('-p, --pname', '显示 helloworld 程序的全称')
     .action(function (username, cmd) {
-    loadCommand_1.default('helloword', '@typescript-sprint/helloword').main(username, cleanArgs(cmd));
+    loadCommand_1.default('helloworld', '@typescript-sprint/helloworld').main(username, cleanArgs(cmd));
+});
+commander_1.default
+    .command('add-module <moduleName>')
+    .description('在 helloworld 中添加新模块')
+    .action(function (moduleName, cmd) {
+    loadCommand_1.default('scripts', '@typescript-sprint/scripts').main('add-module', __assign({}, cleanArgs(cmd), { moduleName: moduleName }));
 });
 // output help information on unknown commands
 commander_1.default

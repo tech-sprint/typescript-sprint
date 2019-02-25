@@ -23,8 +23,8 @@
   cd packages/launch && npm install -g .
 ```
 
-### 执行 helloword 程序
+### 执行 helloworld 程序
 
 ```shell
-  typescript-sprint helloword -p weineel
+  typescript-sprint helloworld -p weineel
 ```

@@ -11,11 +11,18 @@ program
   .usage('<command> [options]')
 
 program
-  .command('helloword <username>')
+  .command('helloworld <username>')
   .description('向指定的用户问好')
-  .option('-p, --pname', '显示 helloword 程序的全称')
+  .option('-p, --pname', '显示 helloworld 程序的全称')
   .action((username, cmd) => {
-    loadCommand('helloword', '@typescript-sprint/helloword').main(username, cleanArgs(cmd))
+    loadCommand('helloworld', '@typescript-sprint/helloworld').main(username, cleanArgs(cmd))
+  })
+
+program
+  .command('add-module <moduleName>')
+  .description('在 helloworld 中添加新模块')
+  .action((moduleName, cmd) => {
+    loadCommand('scripts', '@typescript-sprint/scripts').main('add-module', {...cleanArgs(cmd), moduleName})
   })
 
 // output help information on unknown commands

@@ -12,11 +12,11 @@ commander_1.default
     .version(require('../package.json').version)
     .usage('<command> [options]');
 commander_1.default
-    .command('helloword <username>')
+    .command('helloworld <username>')
     .description('向指定的用户问好')
-    .option('-n, --name', '显示 helloword 程序的全称')
+    .option('-n, --name', '显示 helloworld 程序的全称')
     .action(function (username, cmd) {
-    loadCommand_1.default('helloword', '@typescript-sprint/helloword').main(username, cleanArgs(cmd));
+    loadCommand_1.default('helloworld', '@typescript-sprint/helloworld').main(username, cleanArgs(cmd));
 });
 // output help information on unknown commands
 commander_1.default

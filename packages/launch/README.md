@@ -1,11 +1,3 @@
 # `launch`
 
-> TODO: description
-
-## Usage
-
-```
-const launch = require('launch');
-
-// TODO: DEMONSTRATE API
-```
+> commander 入口
