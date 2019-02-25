@@ -20,7 +20,7 @@ program
 
 program
   .command('add-module <moduleName>')
-  .description('在 helloworld 中添加新模块')
+  .description('在当前工作目录中添加新模块')
   .action((moduleName, cmd) => {
     loadCommand('scripts', '@typescript-sprint/scripts').main('add-module', {...cleanArgs(cmd), moduleName})
   })
