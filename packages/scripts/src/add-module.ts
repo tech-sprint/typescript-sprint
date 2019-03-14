@@ -14,7 +14,14 @@ function addModule(options: Options) {
     </div>
 </template>
 
-<script src="./index.ts"></script>
+<script type="typescript">
+import { Vue, Component } from 'vue-property-decorator'
+
+@Component
+export default class ${options.moduleName} extends Vue {
+    name: string = '${options.moduleName}'
+}
+</script>
 
 <style lang="less">
 // .${claseName} {
@@ -22,13 +29,6 @@ function addModule(options: Options) {
 // }
 </style>
   `)
-fs.writeFileSync(`${moduleDir}/index.ts`,`import { Vue, Component } from 'vue-property-decorator'
-
-@Component
-export default class ${options.moduleName} extends Vue {
-    name: string = '${options.moduleName}'
-}
-`)
 }
 
 function addComponent(options: Options) {
@@ -40,7 +40,14 @@ function addComponent(options: Options) {
     </div>
 </template>
 
-<script src="./${fileName}.ts"></script>
+<script type="typescript">
+import { Vue, Component } from 'vue-property-decorator'
+
+@Component
+export default class ${options.moduleName} extends Vue {
+    name: string = '${options.moduleName}'
+}
+</script>
 
 <style lang="less">
 // .${fileName} {
@@ -48,13 +55,6 @@ function addComponent(options: Options) {
 // }
 </style>
   `)
-fs.writeFileSync(`./${fileName}.ts`,`import { Vue, Component } from 'vue-property-decorator'
-
-@Component
-export default class ${options.moduleName} extends Vue {
-    name: string = '${options.moduleName}'
-}
-`)
 }
 
 export default function (options: Options) {
