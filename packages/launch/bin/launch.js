@@ -32,6 +32,7 @@ commander_1.default
 commander_1.default
     .command('add-module <moduleName>')
     .description('在当前工作目录中添加新模块')
+    .option('-c, --component', '添加的是一个组件')
     .action(function (moduleName, cmd) {
     loadCommand_1.default('scripts', '@typescript-sprint/scripts').main('add-module', __assign({}, cleanArgs(cmd), { moduleName: moduleName }));
 });

@@ -21,6 +21,7 @@ program
 program
   .command('add-module <moduleName>')
   .description('在当前工作目录中添加新模块')
+  .option('-c, --component', '添加的是一个组件')
   .action((moduleName, cmd) => {
     loadCommand('scripts', '@typescript-sprint/scripts').main('add-module', {...cleanArgs(cmd), moduleName})
   })
