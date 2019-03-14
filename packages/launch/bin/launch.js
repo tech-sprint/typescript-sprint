@@ -31,7 +31,7 @@ commander_1.default
 });
 commander_1.default
     .command('add-module <moduleName>')
-    .description('在 helloworld 中添加新模块')
+    .description('在当前工作目录中添加新模块')
     .action(function (moduleName, cmd) {
     loadCommand_1.default('scripts', '@typescript-sprint/scripts').main('add-module', __assign({}, cleanArgs(cmd), { moduleName: moduleName }));
 });

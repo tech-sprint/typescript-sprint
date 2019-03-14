@@ -6,45 +6,27 @@ export default function (options: Options) {
   const moduleDir = `./${claseName}`
 
   fs.mkdirSync(moduleDir)
-  fs.writeFileSync(`${moduleDir}/api.js`, '')
+  // fs.writeFileSync(`${moduleDir}/api.js`, '')
+  // fs.writeFileSync(`${moduleDir}/store.js`, '')
   fs.writeFileSync(`${moduleDir}/index.vue`,`<template>
-  <div class="${claseName}">
-    ${options.moduleName}
-  </div>
+    <div class="${claseName}">
+        ${options.moduleName}
+    </div>
 </template>
 
-<script>
-export default {
-name: '${options.moduleName}',
+<script src="./index.ts"></script>
 
-components: {},
+<style lang="less">
+// .${claseName} {
 
-props: {},
-
-data() {
-  return {}
-},
-
-computed: {},
-
-watch: {},
-
-// mounted() {
-  // this.init()
-// },
-
-methods: {
-  // init() {
-  // }
-}
-}
-</script>
-
-<style lang="stylus">
-// @import "../../assets/css/variable"
-// .${claseName}
-// background-color $white
+// }
 </style>
   `)
-  fs.writeFileSync(`${moduleDir}/store.js`, '')
+fs.writeFileSync(`${moduleDir}/index.ts`,`import { Vue, Component } from 'vue-property-decorator'
+
+@Component
+export default class ${options.moduleName} extends Vue {
+    name: string = '${options.moduleName}'
+}
+`)
 }
